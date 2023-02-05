@@ -1,0 +1,16 @@
+{
+    auto_https disable_redirects
+}
+
+<https://your-domain-here>{
+	tls /etc/caddy/cert.pem /etc/caddy/key.pem
+ 
+	reverse_proxy website:8080
+
+	@rendezvous {
+		header Connection *Upgrade*
+		header Upgrade websocket
+	}
+
+	reverse_proxy @rendezvous rendezvous:4000
+}
