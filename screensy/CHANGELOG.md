@@ -5,9 +5,9 @@ All notable changes to the screensy project will be documented in this file.
 The format is based on [Keep a Changelog], and this project adheres to
 [Semantic Versioning].
 
-## 1.9.0 - 2022-12-15
+## 2022-12-15
 
-### Updated (by Infinity Labs R&D)
+### Changed (by Infinity Labs R&D)
 
 - Updated the Dockerfile and added a docker-compose file. (allowing to use existing https certificates instead of genrating them via Caddy).
 
