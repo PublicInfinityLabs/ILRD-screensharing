@@ -22,6 +22,9 @@
  * @licend  The above is the entire license notice for the JavaScript code in
  * this page.
  */
+interface Window {
+    api: any;
+}
 
 interface MessageJoin {
     type: "join";
@@ -615,6 +618,13 @@ class Room {
         // If the promise is resolved, remove the popup from the screen
         displayMedia.then(() => {
             hidePopup("click-to-share");
+            
+            if (window.api) {
+                    if (window.api.hideWindow) { 
+                        window.api.hideWindow();
+                    }
+                }
+    
         });
 
         // If the promise is rejected, tell the user about the failure
