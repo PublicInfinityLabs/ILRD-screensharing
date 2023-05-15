@@ -7,10 +7,17 @@ The format is based on [Keep a Changelog], and this project adheres to
 
 ## 2023-05-15
 
-### Changed (by Infinity Labs R&D)
+### Fixed (by Infinity Labs R&D)
 
 - Fix mediaDevices undefined error + disable "click-to-share" popUp
+
+### Added (by Infinity Labs R&D)
+
 - Add comment to explain support http communication
+
+### Removed (by Infinity Labs R&D)
+
+- Removed controls from screensharing
 
 ## 2022-12-15
 
