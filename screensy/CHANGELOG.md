@@ -5,6 +5,13 @@ All notable changes to the screensy project will be documented in this file.
 The format is based on [Keep a Changelog], and this project adheres to
 [Semantic Versioning].
 
+## 2023-05-15
+
+### Changed (by Infinity Labs R&D)
+
+- Fix mediaDevices undefined error + disable "click-to-share" popUp
+- Add comment to explain support http communication
+
 ## 2022-12-15
 
 ### Changed (by Infinity Labs R&D)

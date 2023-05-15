@@ -473,6 +473,7 @@ class Room {
         this.videoElement = <HTMLVideoElement>document.getElementById("stream");
 
         const webSocketProtocol =
+         // switching "http" to "http:" in order to support http communication
             window.location.protocol === "http" ? "ws" : "wss";
         const webSocketUrl =
             webSocketProtocol + "://" + location.host + location.pathname;
@@ -591,7 +592,8 @@ class Room {
      * @private
      */
     private async getDisplayMediaStream(): Promise<MediaStream> {
-        showPopup("click-to-share");
+        // Hide the next line to disable popUp
+        // showPopup("click-to-share");
 
         await wait(document, "click");
 
@@ -617,7 +619,8 @@ class Room {
 
         // If the promise is resolved, remove the popup from the screen
         displayMedia.then(() => {
-            hidePopup("click-to-share");
+            // Hide the next line to disable popUp
+            // hidePopup("click-to-share");
             
             if (window.api) {
                     if (window.api.hideWindow) { 
@@ -629,7 +632,9 @@ class Room {
 
         // If the promise is rejected, tell the user about the failure
         displayMedia.catch(() => {
-            hidePopup("click-to-share");
+              // Hide the next line to disable popUp
+              // hidePopup("click-to-share");
+
             showPopup("access-denied");
         });
 
@@ -848,6 +853,12 @@ async function main(_event: Event) {
         showPopup("mediastream-not-supported");
         return;
     }
+    
+    // due to http communication- mediaDevices is undefined. In our code injection we have dealt with this issue.
+    // if (!("mediaDevices" in navigator)) {
+    //   showPopup("mediastream-not-supported");
+    //   return;
+    // }
 
     if (!("RTCPeerConnection" in window)) {
         showPopup("webrtc-not-supported");
