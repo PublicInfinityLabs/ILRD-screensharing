@@ -594,8 +594,7 @@ class Room {
     private async getDisplayMediaStream(): Promise<MediaStream> {
         // Hide the next line to disable popUp
         // showPopup("click-to-share");
-
-        await wait(document, "click");
+        //await wait(document, "click");
 
         const videoConstraints: MediaTrackConstraints | boolean = true;
         const audioConstraints: MediaTrackConstraints | boolean = {
